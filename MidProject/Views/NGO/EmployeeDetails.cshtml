@@ -1,0 +1,24 @@
+﻿@model MidProject.EF.Models.Employee
+@{
+    ViewBag.Title = "EmployeeDetails";
+    Layout = "~/Views/Shared/_NGOLayout.cshtml";
+}
+
+<h2>Employee Details</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>Name</dt>
+                <dd>@Model.Name</dd>
+                <dt>Email</dt>
+                <dd>@Model.Email</dd>
+                <dt>Contact</dt>
+                <dd>@Model.Contact</dd>
+                <dt>Assign Date</dt>
+                <dd>@Model.AssignData</dd>
+            </dl>
+        </div>
+    </div>
+</div>

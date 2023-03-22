@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MidProject.EF.Models.CollectRequest>
+
+@{
+    ViewBag.Title = "AssignEmployees";
+    Layout = "~/Views/Shared/_NGOLayout.cshtml";
+}
+
+<h2>Assign Employees</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Restaurant Name
+        </th>
+        <th>
+            Food Name
+        </th>
+        <th>
+            Food Quantity
+        </th>
+        <th>
+            RequestDate
+        </th>
+        <th>
+            Maximum Preserve Time
+        </th>
+        <th>
+            Food Image
+        </th>
+        <th>
+            Current Status
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.RestaurantName</td>
+            <td>@item.Name</td>
+            <td>@item.Quantity</td>
+            <td>@item.RequestDate.ToString("MM/dd/yyyy")</td>
+            <td>@item.MaximumPreserveTime.ToString("MM/dd/yyyy")</td>
+            <td style="max-width: 100px;"><img src="@Url.Content("~/Images/" + item.Image)" style="max-width: 100%; height: auto;" /></td>
+            <td>@item.Status</td>
+            <td>
+                <span class=" btn btn-info">
+                    @Html.ActionLink("Employee Details", "EmployeeDetails", new { id = item.ID })
+                </span>
+            </td>
+        </tr>
+    }
+</table>
+

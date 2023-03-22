@@ -1,0 +1,37 @@
+﻿@model MidProject.EF.Models.Restaurant
+
+@{
+    ViewBag.Title = "ShowProfile";
+    Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
+}
+
+<div>
+    <h2>Restaurant Profile</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Contact)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit Profile", "EditProfile", new { id = Model.ID })
+</p>

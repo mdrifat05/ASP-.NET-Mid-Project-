@@ -1,0 +1,39 @@
+﻿@model MidProject.EF.Models.CollectRequest
+@{
+    ViewBag.Title = "CollectRequests";
+    Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
+}
+
+<h2>Add Collect Requests</h2>
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="container">
+    <form action="" method="post">
+        <div class="form-group">
+            <label for="name">Food Name:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter food name" name="Name">
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="quantity">Food Quantity:</label>
+            <input type="text" class="form-control" id="quantity" placeholder="Enter food quantity" name="Quantity">
+            @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="requestdate">Request Date:</label>
+            <input type="date" class="form-control" id="requestdate" placeholder="Enter request date" name="RequestDate">
+            @Html.ValidationMessageFor(model => model.RequestDate, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="preservetime">Maximum Preserve Time:</label>
+            <input type="date" class="form-control" id="preservetime" placeholder="Enter maximum preserve pime" name="MaximumPreserveTime">
+            @Html.ValidationMessageFor(model => model.MaximumPreserveTime, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="image">Food Image:</label>
+            <input type="file" class="form-contrl" id="image" placeholder="Enter password" name="image">
+            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0ce8522c224d4327a74f2f59d345829d" Name="Diagram1" ZoomLevel="98">
+        <EntityTypeShape EntityType="NGOModel.Admin" Width="1.5" PointX="0.625" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGOModel.CollectRequest" Width="1.5" PointX="5.875" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGOModel.Employee" Width="1.5" PointX="1.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGOModel.Login" Width="1.5" PointX="2.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NGOModel.Restaurant" Width="1.5" PointX="4.25" PointY="6.875" IsExpanded="true" />
+        <AssociationConnector Association="NGOModel.FK_Admins_Logins" ManuallyRouted="false" />
+        <AssociationConnector Association="NGOModel.FK_CollectRequests_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="NGOModel.FK_CollectRequests_Logins" ManuallyRouted="false" />
+        <AssociationConnector Association="NGOModel.FK_Employees_Logins" ManuallyRouted="false" />
+        <AssociationConnector Association="NGOModel.FK_Restaurants_Logins" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

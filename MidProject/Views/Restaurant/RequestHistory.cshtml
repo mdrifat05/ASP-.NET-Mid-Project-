@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MidProject.EF.Models.CollectRequest>
+
+@{
+    ViewBag.Title = "RequestHistory";
+    Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
+}
+
+<h2>Request History</h2>
+<table class="table">
+    <tr>
+        <th>
+            Restaurant Name
+        </th>
+        <th>
+            Food Name
+        </th>
+        <th>
+            Food Quantity
+        </th>
+        <th>
+            RequestDate
+        </th>
+        <th>
+            Maximum Preserve Time
+        </th>
+        <th>
+            Food Image
+        </th>
+        <th>
+            Current Status
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.RestaurantName</td>
+            <td>@item.Name</td>
+            <td>@item.Quantity</td>
+            <td>@item.RequestDate.ToString("MM/dd/yyyy")</td>
+            <td>@item.MaximumPreserveTime.ToString("MM/dd/yyyy")</td>
+            <td style="max-width: 100px;"><img src="@Url.Content("~/Images/" + item.Image)" style="max-width: 100%; height: auto;" /></td>
+            <td>@item.Status</td>
+            <td>
+            @*@Html.ActionLink("Edit", "EditRequest", new { id = item.ID })|*@
+                @Html.ActionLink("Delete", "DeleteRequest", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+
